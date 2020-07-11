@@ -1,0 +1,160 @@
+/******** Reset Body *********/
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #000;
+  background-color: #285FBC;
+
+}
+
+.main-container {
+  height: 100vh;
+
+}
+
+.container {
+  background-color: #d3d3d3;
+}
+
+
+/* Title style */
+h2 {
+  color: #072749;
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  border-bottom: 5px solid #072749;
+  border-radius: 5px;
+  width: 150px;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+span {
+  font-weight: 400;
+}
+
+
+.thumbnail {
+  position: relative;
+  overflow: hidden;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* Text Effect */
+.thumbnail h3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+  align-items: center;
+  font-size: 24px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+.thumbnail:hover h3 {
+  opacity: 1;
+  top: 40px;
+}
+
+
+/*Image Zoom Effect*/
+.thumbnail img,
+.thumbnail h3 {
+  transition: 0.5s;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+
+
+/*Border Bottom Effect*/
+.thumbnail::before {
+  content: "";
+  position: absolute;
+  border: 5px solid #007bff;
+  width: 100%;
+  bottom: -10px;
+  left: 0;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.thumbnail:hover::before {
+  bottom: 0px;
+}
+
+
+/*Overlay Effect*/
+.thumbnail::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.5;
+  visibility: hidden;
+}
+
+.thumbnail:hover::after {
+  visibility: visible;
+}
+
+
+
+/* // Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .main-container {
+    height: auto;
+  }
+
+  .thumbnail {
+    margin-bottom: 20px;
+  }
+
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .main-container {
+    height: auto;
+  }
+
+  thumbnail {
+    margin-bottom: 20px;
+  }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .main-container {
+    height: auto;
+  }
+
+  .thumbnail {
+    margin-bottom: 20px;
+  }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .thumbnail h3 {
+    font-size: 20px;
+  }
+}
